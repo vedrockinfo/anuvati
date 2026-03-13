@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.subscriptionForm {
+    form {
+        .formRow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1rem;
+
+            input {
+                font-size: $defaultFontSize;
+                line-height: 2rem;
+                padding: 8px 16px;
+                background: $colorWhite;
+                border: 2px solid $colorBorder;
+                border-radius: 6px;
+                height: 44px;
+                width: 316px;
+
+                &:focus {
+                    border: 2px solid $colorSecondary !important;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 2.5px;
+    }
+}

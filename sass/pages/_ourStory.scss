@@ -1,0 +1,146 @@
+@use "../abstracts" as *;
+
+.ourStoryTimeline {
+    position: relative;
+    background: $colorLight;
+
+    .card {
+        background: $colorWhite;
+        padding: 3.2rem;
+        border-radius: 0.8rem;
+        border: 1px solid $colorBorder;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: $boxShadow;
+        }
+    }
+
+    .headingTertiary {
+        font-weight: 700;
+    }
+
+    .selectionGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 4rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            background: $colorSecondary;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+
+        @include respond (maxWidth992) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2.5rem;
+        }
+
+        .srNo {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: $colorSecondary;
+            width: 1rem;
+            outline: 5px solid $colorWhite;
+            height: 1rem;
+            border-radius: 100%;
+            display: grid;
+            place-content: center;
+            z-index: 1;
+
+            @include respond (maxWidth992) {
+                top: auto;
+                bottom: -1.25rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .selectionGrid-item {
+            @include respond (maxWidth992) {
+                position: relative;
+
+                &:last-child {
+                    .srNo {
+                        display: none;
+                    }
+                }
+
+                &.blank {
+                    display: none;
+                }
+            }
+
+            &.left {
+                @include respond (minWidth992) {
+                    grid-column: 1;
+                    position: relative;
+                    padding-right: 100px;
+
+                    .srNo {
+                        right: -0.5rem;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 52%;
+                        transform: translate(0, -50%) rotate(180deg);
+                        right: 31px;
+                        width: 64px;
+                        height: 40px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                }
+
+                &::before {
+                    @include respond (minmax992-12) {
+                        top: 51% !important;
+                        right: 28px !important;
+                    }
+                }
+            }
+
+            &.right {
+                @include respond (minWidth992) {
+                    grid-column: 2;
+                    position: relative;
+                    padding-left: 100px;
+
+                    .srNo {
+                        left: -0.5rem;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 48.5%;
+                        transform: translate(0, -50%);
+                        left: 31px;
+                        width: 64px;
+                        height: 40px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                }
+
+                &::after {
+                    @include respond (minmax992-12) {
+                        top: 48.7% !important;
+                        left: 28px !important;
+                    }
+                }
+            }
+        }
+    }
+}

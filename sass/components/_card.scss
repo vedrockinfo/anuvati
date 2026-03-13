@@ -1,0 +1,541 @@
+@use "../abstracts" as *;
+
+.impactCard {
+    background: $colorWhite;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+
+    .icon {
+        width: 48px;
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-content: center;
+        background: rgba($colorPrimary, $alpha: 0.1);
+        border-radius: 5px;
+        margin-bottom: 2rem;
+
+        i {
+            color: $colorPrimary;
+            font-size: 2rem;
+        }
+    }
+}
+
+.methodCard {
+    display: grid;
+    grid-template-columns: 8rem calc(100% - 8rem);
+    background: $colorWhite;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        background: var(--mdclr);
+        height: 4px;
+        width: 0;
+        transition: $transition;
+    }
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+
+    &:hover {
+        .icon {
+            background-image: linear-gradient(90deg, rgba($colorPrimary, 0.1) 50%, rgba($colorSecondary, 0.1) 100%);
+        }
+    }
+
+    .icon {
+        width: 8rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 1rem;
+        margin: auto;
+        display: grid;
+        place-content: center;
+        background: var(--mdclr);
+        transition: $transition;
+
+        i {
+            color: $colorWhite;
+            font-size: 3.3rem;
+        }
+    }
+
+    .content {
+        padding-left: 3rem;
+
+        .subHeading {
+            color: var(--mdclr);
+        }
+
+        .headingTertiary {
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 700;
+            color: $colorHeading;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.presenceCard {
+    background: $colorWhite;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    text-align: center;
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .icon {
+        background: rgba($colorPrimary, $alpha: 0.1);
+        border-radius: 5px;
+        display: inline-block;
+        width: 3rem;
+        aspect-ratio: 1 / 1;
+        place-content: center;
+
+        i {
+            color: $colorSecondary;
+        }
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 1rem;
+
+        .headingQuartary {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.testCard {
+    background: $colorWhite;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    text-align: center;
+
+    .name {
+        display: block;
+        font-weight: 700;
+        color: $colorPrimary;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .dest {
+        display: block;
+        text-align: center;
+        font-size: $defaultFontSize;
+        font-weight: normal;
+    }
+
+    .icon {
+        text-align: center;
+
+        img {
+            width: 6rem;
+            margin: 0 auto 2rem;
+            opacity: 0.25;
+        }
+    }
+}
+
+.authorCard {
+    @extend .presenceCard;
+
+    em {
+        font-weight: 700;
+        display: block;
+        margin-top: 2rem;
+        color: $colorHeading;
+    }
+}
+
+.advisoryCard {
+    @extend .presenceCard;
+}
+
+.workCard {
+    background: $colorWhite;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+
+    &:hover {
+        box-shadow: $boxShadow;
+        background: rgba($colorSecondary, 0.04);
+
+        .bottom {
+            span {
+                &::after {
+                    opacity: 1;
+                    right: -3.5rem;
+                    width: 3rem;
+
+                }
+            }
+        }
+    }
+
+    .visibleArea {
+        cursor: pointer;
+    }
+
+    .top {
+        .imgWrapper {
+            position: relative;
+            height: 15rem;
+            border-radius: 0.8rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &::before {
+                content: "";
+                background-image: linear-gradient(0deg, $colorHeading 0, transparent 50%);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+                height: 100%;
+            }
+
+            .content {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                z-index: 1;
+
+                .subHeading {
+                    color: $colorWhite;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+
+                span {
+                    display: block;
+                    color: $colorWhite;
+                    font-weight: 500;
+                    font-size: $defaultFontSize;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        padding: 1rem;
+
+        p {
+            font-size: $defaultFontSize;
+            margin-bottom: 0;
+        }
+
+        span {
+            display: inline-block;
+            color: $colorSecondary;
+            font-weight: 700;
+            margin-top: 2rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                background-color: rgba($colorSecondary, 1);
+                position: absolute;
+                right: -3rem;
+                top: 1.1rem;
+                width: 3rem;
+                opacity: 0;
+                height: 1px;
+                transition: $transition;
+            }
+        }
+    }
+
+    .invisibleArea {
+        display: none;
+        margin-top: 1rem;
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: $colorText;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 3px;
+        }
+
+        .textPrimary {
+            color: $colorPrimary;
+            font-weight: 700;
+        }
+    }
+}
+
+.focusCard {
+    background: $colorWhite;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    height: 100%;
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+
+    .imgWrapper {
+        height: 128px;
+        position: relative;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &::before {
+            content: "";
+            background-image: linear-gradient(0deg, $colorHeading 0, transparent 50%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            height: 100%;
+        }
+
+        .title {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: $colorWhite;
+            font-size: $defaultFontSize;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content {
+        text-align: left;
+        padding: 20px;
+
+        .view {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+                color: $colorSecondary;
+                text-transform: capitalize;
+                font-weight: 600;
+                padding: 0 8px;
+                @include btnArrow();
+                position: relative;
+
+                &::after {
+                    content: "";
+                    background: $colorSecondary;
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    transition: $transition;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spotLightCard {
+    @extend .focusCard;
+
+    .imgWrapper {
+        height: 180px;
+    }
+
+    .title {
+        bottom: auto !important;
+        top: 1rem;
+        background: $colorSecondary;
+        padding: 5px 16px;
+        border-radius: 16px;
+    }
+}
+
+.insightCard {
+    @extend .focusCard;
+
+    &:hover {
+        .headingQuartary {
+            color: $colorSecondary;
+        }
+    }
+
+    .date {
+        margin-bottom: 1.5rem;
+    }
+
+    .announce {
+        background: rgba($colorPrimary, 0.1);
+        color: $colorSecondary;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        font-size: 12px;
+        display: inline-block;
+        border-radius: 2rem;
+    }
+
+    .calendar {
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .headingQuartary {
+        transition: $transition;
+    }
+}
+
+.programCard {
+    background: $colorWhite;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    overflow: hidden;
+    transition: $transition;
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    &::before {
+        content: "";
+        background-image: $gradientTwo;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+    }
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+
+    .programName {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @include respond (maxWidth575) {
+            justify-content: center;
+            row-gap: 1rem;
+        }
+
+        .headingTertiary {
+            font-weight: 700;
+            padding-right: 2rem;
+            margin-bottom: 0;
+        }
+
+        span {
+            display: inline-block;
+            background: rgba($colorTertiary, 0.04);
+            color: $colorTertiary;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 3rem;
+        }
+    }
+
+    .programDataGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include respond (maxWidth1200) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond (maxWidth575) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .programData {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 2rem;
+
+            i {
+                color: rgba($colorSecondary, 1);
+            }
+
+            .location {
+                padding-left: 2rem;
+
+                .status {
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+
+                p {
+                    font-weight: 600;
+                    margin-bottom: 0;
+                    color: $colorFooter;
+                }
+            }
+        }
+    }
+
+    .objective {
+        background: $colorLight;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 1.5rem;
+    }
+}

@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.workCategories {
+    .catNav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 3rem;
+
+        @include respond (maxWidth575) {
+            justify-content: center;
+        }
+
+        .nav-item {
+            .nav-link {
+                font-size: $defaultFontSize;
+                line-height: 2rem;
+                padding: 8px 16px;
+                background: $colorLight;
+                color: $colorHeading;
+                font-weight: 700;
+                border-radius: 30px;
+                text-transform: capitalize;
+                transition: $transition;
+
+                &.active {
+                    background: $colorPrimary;
+                    color: $colorWhite;
+                }
+            }
+        }
+    }
+}
+
+.intrested {
+    .btnGrid {
+        justify-content: center;
+
+        .btnSecondary {
+            @include btnArrow;
+        }
+    }
+}

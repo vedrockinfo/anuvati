@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.btnPrimary {
+    padding: 8px 15px;
+    line-height: 16px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $colorWhite;
+    background: $colorPrimary;
+    border: 1px solid $colorPrimary;
+    border-radius: 6px;
+    transition: $transition;
+    display: inline-block
+}
+
+.btnSecondary {
+    @extend .btnPrimary;
+    background: $colorSecondary;
+    border: 1px solid $colorSecondary;
+}
+
+.btnTertiary {
+    @extend .btnPrimary;
+    background: $colorTertiary;
+    border: 1px solid $colorTertiary;
+}
+
+.btnLight {
+    @extend .btnPrimary;
+    background: $colorWhite;
+    color: $colorHeading;
+    border: 1px solid $colorBorder;
+}
+
+.btnDark {
+    @extend .btnPrimary;
+    background: $colorWhite;
+    border: 1px solid $colorSecondary;
+    color: $colorSecondary;
+
+    &:hover {
+        background: $colorSecondary;
+        color: $colorWhite;
+    }
+}

@@ -1,0 +1,23 @@
+$colorPrimary: #673181;
+$colorSecondary: #b1253d;
+$colorTertiary: #ee862b;
+$colorHeading: #1a212d;
+$colorLight: #f7f5fa;
+$colorFooter: #0f192e;
+$colorText: #6a7181;
+$colorBorder: #e7e5eb;
+$colorWhite: #ffffff;
+
+$gradientOne: linear-gradient(135deg, $colorPrimary 52%, $colorSecondary 100%);
+$gradientTwo: linear-gradient(135deg, $colorSecondary 52%, $colorTertiary 100%);
+
+$fontPrimary: "Open Sans", sans-serif;
+$fontSecondary: 'Poppins', sans-serif;
+$fontTertiary: "Montserrat", sans-serif;
+
+$defaultFontSize: 1.4rem;
+
+$transition: all 0.4s ease-in-out;
+
+$boxShadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$cardShadow: 0 4px 24px -4px hsl(153 88% 22% / .12);

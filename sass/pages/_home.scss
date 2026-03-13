@@ -1,0 +1,367 @@
+@use '../abstracts' as *;
+@use 'sass:color';
+
+.heroSection {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: linear-gradient(135deg, $colorHeading 52%, rgba($colorHeading, 0.7) 100%);
+        opacity: 0.87;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .content {
+
+        h6 {
+            color: $colorTertiary;
+            letter-spacing: 4.2px;
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 6rem;
+            line-height: 1;
+            color: $colorWhite;
+            font-weight: 700;
+            margin: 2rem 0;
+            display: block;
+
+            span {
+                color: $colorTertiary;
+            }
+
+            @include respond (maxWidth1200) {
+                font-size: 4.8rem;
+            }
+
+            @include respond (maxWidth992) {
+                font-size: 4rem;
+            }
+
+            @include respond (maxWidth575) {
+                font-size: 3rem;
+                line-height: normal;
+            }
+        }
+
+        p {
+            color: rgba($colorWhite, $alpha: 0.8);
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+        }
+
+        .btnGrid {
+            margin-top: 4rem;
+
+            .btnTertiary {
+                @include btnArrow;
+            }
+        }
+    }
+
+    .founded {
+        background: $colorSecondary;
+        padding: 3rem 0;
+        margin-top: 1.5rem;
+
+        .col-md-6 {
+            text-align: center;
+
+            p {
+                margin-bottom: 0;
+                color: rgba($colorWhite, $alpha: 0.7);
+                line-height: 1;
+            }
+
+            h4 {
+                color: $colorWhite;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.whoWeAre {
+    figure {
+        position: relative;
+    }
+
+    .youthGrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        span {
+            letter-spacing: 0.6px;
+            font-weight: 700;
+            font-size: 12px;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 16px;
+            color: $colorSecondary;
+            text-transform: uppercase;
+            background: rgba($colorSecondary, 0.1);
+        }
+    }
+
+    .btnDark {
+        @include btnArrow;
+    }
+
+    figure {
+        .devSec {
+            position: absolute;
+            background: $colorSecondary;
+            border-radius: 8px;
+            text-align: center;
+            padding: 2rem;
+
+            @include respond (maxWidth1200) {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 5px;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include respond (minWidth1200) {
+                bottom: -3rem;
+                left: -6rem;
+            }
+
+            h6 {
+                font-size: 24px;
+                line-height: 1;
+                font-weight: 700;
+                color: $colorWhite;
+            }
+
+            p {
+                color: rgba($colorWhite, $alpha: 0.7);
+            }
+
+        }
+    }
+}
+
+.ourAmbitious {
+    background: $colorHeading;
+
+    .counterRow {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+        justify-content: space-between;
+
+        @include respond (maxWidth992) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond (maxWidth575) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: $colorWhite;
+            text-align: center;
+
+            &.counter::after {
+                content: "+";
+                display: inline-block;
+            }
+
+            @include respond (maxWidth992) {
+                font-size: 3.6rem;
+            }
+
+            @include respond (maxWidth575) {
+                font-size: 3rem;
+                line-height: normal;
+            }
+        }
+
+        p {
+            color: $colorLight;
+            text-align: center;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.focusArea {
+    background: $colorLight;
+
+    .btnGrid {
+        justify-content: center;
+
+        a {
+            @include btnArrow;
+        }
+    }
+}
+
+.spotLightArea {
+    background: $colorLight;
+
+    .compGrid {
+        align-items: flex-end;
+
+        .btnGrid {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.insightArea {
+
+    .compGrid {
+        align-items: flex-end;
+
+        .btnGrid {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.seekingPartner {
+    position: relative;
+    overflow: hidden;
+
+    .overLay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    .seekSlider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .owl-stage-outer,
+        .owl-stage,
+        .owl-item {
+            height: 100%;
+        }
+
+        .item {
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    h6,
+    h2,
+    p,
+    li {
+        color: $colorWhite;
+    }
+
+    .icon {
+        margin: 0 auto 3rem;
+        width: 56px;
+        aspect-ratio: 1 / 1;
+        background: rgba($colorWhite, $alpha: 0.2);
+        backdrop-filter: 4px;
+        border-radius: 100%;
+        display: grid;
+        place-content: center;
+
+        i {
+            color: $colorWhite;
+            font-size: 2rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+
+        li {
+            background: rgba($colorWhite, $alpha: 0.1);
+            backdrop-filter: 4px;
+            padding: 8px 16px;
+            border-radius: 3rem;
+        }
+    }
+
+    .btnGrid {
+        justify-content: center;
+
+        a {
+            @include btnArrow;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.committedEthics {
+    background: $colorSecondary;
+
+    .top {
+        background: $colorLight;
+        padding: 2rem 0;
+        text-align: center;
+
+        p {
+            font-weight: 500;
+            margin: 0;
+            line-height: 1;
+        }
+
+        i,
+        span {
+            color: $colorSecondary;
+        }
+    }
+
+    .btnGrid {
+        justify-content: center;
+    }
+
+    .btnDark {
+        &:hover {
+            border-color: $colorWhite;
+        }
+    }
+}

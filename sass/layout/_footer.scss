@@ -1,0 +1,150 @@
+@use "../abstracts" as *;
+
+footer {
+    background: $colorFooter;
+
+    hr {
+        margin: 0;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 12px;
+        color: rgba($colorWhite, $alpha: 0.7);
+        padding: 2rem 0;
+        margin-bottom: 0;
+    }
+
+    .socialMedia {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 1rem;
+
+        @include respond (maxWidth768) {
+            justify-content: center;
+        }
+
+        li {
+            a {
+                display: grid;
+                width: 4.5rem;
+                aspect-ratio: 1 / 1;
+                border-radius: 100%;
+                border: 1px solid rgba($colorWhite, $alpha: 0.7);
+                place-content: center;
+                transition: $transition;
+
+                &:hover {
+                    background: rgba($colorWhite, $alpha: 0.7);
+
+                    i {
+                        color: $colorFooter;
+                    }
+                }
+
+                i {
+                    color: rgba($colorWhite, $alpha: 0.7);
+                    font-size: 2rem;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 12px;
+        color: rgba($colorWhite, $alpha: 0.7);
+
+        a {
+            color: rgba($colorWhite, $alpha: 0.7);
+        }
+    }
+
+    .fWidget {
+        color: $colorWhite;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: $defaultFontSize;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        a {
+            transition: $transition;
+
+            &:hover {
+                color: rgba($colorWhite, $alpha: 1);
+            }
+        }
+
+        a,
+        span {
+            display: inline-block;
+            color: rgba($colorWhite, $alpha: 0.7);
+            font-size: 12px;
+            padding: 5px 5px;
+        }
+    }
+
+    .fContact {
+        li {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+    }
+
+    .donateMobile {
+        @include respond (minWidth992) {
+            display: none;
+        }
+
+        .whatsApp {
+            a {
+                position: fixed;
+                right: 0;
+                bottom: 5rem;
+                display: inline-block;
+                background: #33bc1c;
+                padding: 1rem 0.5rem 1rem 2rem;
+                border-radius: 50px 0px 0px 50px;
+
+                img {
+                    filter: brightness(100) invert(0);
+                    width: 3rem;
+                }
+            }
+        }
+
+        .donateBtn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background: $colorPrimary;
+            display: block;
+            text-align: center;
+            line-height: 1;
+
+            a {
+                padding: 1rem;
+                display: block;
+                color: rgba($colorWhite, $alpha: 1);
+            }
+        }
+    }
+
+    .fLogo {
+        width: 20rem;
+        margin: 0 0 10px;
+
+        img {
+            filter: brightness(100) invert(0);
+        }
+    }
+}

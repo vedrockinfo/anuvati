@@ -1,0 +1,19 @@
+{
+  "name": "newwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss assets/css/main.min.css --style=compressed",
+    "serve": "browser-sync start --proxy localhost/anuvati --files '**/*.php, **/*.css, **/*.js'"
+  },
+  "dependencies": {
+    "sass": "^1.97.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}

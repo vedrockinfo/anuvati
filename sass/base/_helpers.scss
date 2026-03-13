@@ -1,0 +1,469 @@
+@use '../abstracts' as *;
+@use 'sass:color';
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-bottom: 0;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+.mTop {
+    margin-top: 7rem;
+
+    @include respond (maxWidth768) {
+        margin-top: 4rem;
+    }
+}
+
+.pTop {
+    padding-top: 7rem;
+
+    @include respond (maxWidth768) {
+        padding-top: 4rem;
+    }
+}
+
+.pBottom {
+    padding-bottom: 7rem;
+
+    @include respond (maxWidth768) {
+        padding-bottom: 4rem;
+    }
+}
+
+.primaryList {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+
+    li {
+        position: relative;
+        padding-left: 18px;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        &::before {
+            content: "\f058";
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            font-size: 12px;
+            top: 3.5px;
+            position: absolute;
+            color: $colorPrimary;
+            left: 0;
+        }
+    }
+}
+
+.subPrimaryList {
+    margin: 1rem;
+    padding-left: 0;
+
+    li {
+        position: relative;
+        padding-left: 15px;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        &::before {
+            content: "\f111";
+            font-weight: 400;
+            font-family: "Font Awesome 6 Free";
+            font-size: 5px;
+            top: 7px;
+            position: absolute;
+            color: $colorPrimary;
+            left: 0;
+        }
+    }
+}
+
+.spaceS {
+    height: 3rem;
+    display: block;
+
+    @include respond (maxWidth575) {
+        height: 2rem;
+    }
+}
+
+p {
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+.btnGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.borderOne {
+    height: 5px;
+    width: 25rem;
+    margin: 1rem auto;
+    background: $colorPrimary;
+    border-radius: 1rem;
+}
+
+.internalLink {
+    color: $colorPrimary;
+    font-weight: normal;
+    font-weight: 500;
+
+    &:hover {
+        color: $colorSecondary;
+    }
+}
+
+.h100 {
+    height: 100vh;
+    background: var(--bgclr);
+    display: grid;
+    place-content: center;
+    font-weight: 900;
+    color: $colorWhite;
+    text-shadow: 2px 2px 2px #ccc;
+    font-size: 6rem;
+}
+
+
+.sectionTitle {
+    margin-bottom: 5rem;
+
+    @include respond (maxWidth768) {
+        margin-bottom: 2.5rem;
+    }
+
+    &.mb-3 {
+        margin-bottom: 3rem;
+    }
+}
+
+.imgBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: $colorSecondary;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.6rem;
+        z-index: -1;
+        transition: $transition;
+    }
+
+    &:hover {
+        &::before {
+            left: 0.6rem;
+            top: 0.6rem;
+        }
+
+        img {
+            top: -0.5rem;
+            left: -0.5rem;
+            filter: brightness(1.2);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1.6rem;
+        transition: $transition;
+    }
+}
+
+.borderBottom {
+    height: 5px;
+    width: 25rem;
+    margin: 1rem 0;
+    background: #086945;
+    border-radius: 1rem;
+
+    @include respond (maxWidth575) {
+        width: 30%;
+    }
+}
+
+.innerHeroSection {
+    padding: 3rem 0;
+    background: $colorPrimary;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    h1 {
+        text-align: center;
+        color: $colorWhite;
+        text-transform: uppercase;
+        font-size: 4.8rem;
+        margin-bottom: 0;
+
+        @include respond (maxWidth992) {
+            font-size: 4rem;
+        }
+
+        @include respond (maxWidth768) {
+            font-size: 3.6rem;
+            margin-bottom: 0;
+        }
+
+        @include respond (maxWidth575) {
+            font-size: 2.6rem;
+        }
+
+    }
+}
+
+.alert-warning {
+    background: $colorSecondary;
+    margin-bottom: 0;
+    padding: 8px;
+
+    p {
+        font-size: 12px;
+        text-align: center;
+        color: $colorWhite;
+        margin-bottom: 0;
+
+        a {
+            font-weight: 700;
+            color: $colorWhite;
+            text-decoration: underline;
+        }
+    }
+
+    .btn-close {
+        filter: brightness(100) invert(10);
+        transform: scale(0.6);
+        opacity: 1;
+        padding-top: 4px;
+    }
+}
+
+.imgWrapper {
+    overflow: hidden;
+    border-radius: 1.6rem;
+    height: 100%;
+
+    &:hover {
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    img {
+        transition: $transition;
+    }
+}
+
+.owl-nav {
+
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $colorWhite !important;
+        width: 5rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
+        border: 1px solid $colorBorder !important;
+        box-shadow: $boxShadow;
+        transition: $transition;
+
+        &:hover {
+            border: 1px solid $colorPrimary !important;
+
+            i {
+                color: $colorPrimary;
+            }
+        }
+    }
+
+    .owl-prev {
+        left: -2.5rem;
+    }
+
+    .owl-next {
+        right: -2.5rem;
+    }
+}
+
+.cta-2 {
+    background: $colorFooter;
+
+    p {
+        text-align: center;
+        color: $colorWhite;
+
+        &::before {
+            content: "\f10d";
+            display: inline-block;
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+            left: -7px;
+        }
+
+        &::after {
+            content: "\f10d";
+            display: inline-block;
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+            transform: scaleX(-1);
+            right: -7px;
+        }
+    }
+
+    em {
+        font-weight: 700;
+        color: $colorSecondary;
+        display: block;
+        text-align: center;
+    }
+}
+
+.cta-1 {
+    .icon {
+        width: 64px;
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
+        background: rgba($colorPrimary, $alpha: 0.2);
+        margin: 0 auto 2rem;
+        display: grid;
+        place-content: center;
+
+        i {
+            color: $colorPrimary;
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        margin-top: 1rem;
+
+        @include respond (minWidth1200) {
+            padding: 0 6rem;
+        }
+    }
+
+    .subscribeForm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        input {
+            font-size: 12px;
+            line-height: 16px;
+            padding: 8px 12px;
+            border: 1px solid $colorBorder;
+            border-radius: 6px;
+            min-width: 333px;
+        }
+    }
+
+    span {
+        display: block;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+.innerSection {
+    background: rgba($colorSecondary, $alpha: 0.1);
+
+    .notes {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1.5rem;
+
+        i {
+            font-size: 2.4rem;
+            color: $colorTertiary;
+        }
+    }
+}
+
+.numList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+        background: $colorWhite;
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+        border: 1px solid $colorBorder;
+        font-weight: 500;
+        list-style-position: inside;
+
+        &::marker {
+            color: rgba($colorSecondary, $alpha: 1);
+            font-weight: 700;
+            font-size: 2rem;
+        }
+    }
+}
+
+.row {
+    row-gap: 2rem;
+}
+
+blockquote {
+    background: rgba($colorSecondary, $alpha: 0.05);
+    padding: 2.4rem;
+    border: 1px solid rgba($colorSecondary, $alpha: 0.1);
+    position: relative;
+    border-radius: 2rem;
+
+    &::before {
+        content: "\f10e";
+        display: inline-block;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        font-size: 2rem;
+        top: 2.2rem;
+        left: 2.4rem;
+        color: $colorSecondary;
+    }
+
+    em {
+        display: inline-block;
+        padding-left: 2.5rem;
+        font-size: 1.8rem;
+    }
+}

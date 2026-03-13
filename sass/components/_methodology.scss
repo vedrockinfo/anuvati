@@ -1,0 +1,75 @@
+@use "../abstracts" as *;
+
+.methodologyArea {
+    .owl-item.active {
+        .item {
+            .methodCard {
+                &::before {
+                    animation: progressBar 7s linear;
+                }
+            }
+        }
+    }
+
+    .timeline {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 50px;
+
+        .progressLine {
+            position: absolute;
+            height: 4px;
+            background: #ddd;
+            width: 80%;
+            left: 50%;
+            top: 25px;
+            transform: translateX(-50%);
+        }
+
+        .progressLine span {
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: #6b3fa0;
+            transition: width .6s ease;
+        }
+
+        .step {
+            text-align: center;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .step span {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .icon {
+            width: 5rem;
+            aspect-ratio: 1 / 1;
+            border-radius: 100%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: auto;
+            transition: .3s;
+
+            i {
+                color: $colorWhite;
+            }
+        }
+
+        .step.active .icon {
+            background: var(--mdclr);
+        }
+
+        .step.active span {
+            color: var(--mdclr);
+        }
+    }
+}

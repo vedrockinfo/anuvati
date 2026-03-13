@@ -1,0 +1,39 @@
+@keyframes slidetop {
+    0% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes progressLin {
+    0% {
+        width: 0%;
+    }
+
+    25% {
+        width: 26%;
+    }
+
+    75% {
+        width: 53%;
+    }
+
+    100% {
+        width: 82%;
+    }
+}

@@ -1,0 +1,13 @@
+@use './variables' as *;
+@use './responsive' as *;
+
+@mixin btnArrow {
+    &::after {
+        content: "\f178";
+        display: inline-block;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-left: 8px;
+        font-size: 14px;
+    }
+}
