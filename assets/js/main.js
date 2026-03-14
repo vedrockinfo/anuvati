@@ -69,6 +69,9 @@ const links = document.querySelectorAll('.nav-list .nav-link');
 const currentPage = window.location.pathname.split("/").pop();
 
 links.forEach(link => {
+    if (currentPage === "") {
+    currentPage = "/";
+}
     if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
     }

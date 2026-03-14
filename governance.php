@@ -14,5 +14,22 @@ include 'includes/header.php';
                 </div>
             </div>
         </section>
+        <section class="governanceArea mTop">
+            <div class="container">
+                <div class="governanceCard">
+                    <div class="srNo">01</div>
+                    <div class="content">
+                        <h3 class="headingQuartary">Governing Board</h3>
+                        <p>Strategic oversight and policy direction</p>
+                        <ul>
+                            <li>Board Member 1 — Chairperson</li>
+                            <li>Board Member 2 — Secretary</li>
+                            <li>Board Member 3 — Treasurer</li>
+                            <li>Board Member 4 — Member</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 <?php include 'includes/footer.php'; ?>

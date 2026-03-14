@@ -33,3 +33,19 @@
         margin-top: 2.5px;
     }
 }
+.partnership-Form{
+    background: $colorLight;
+    padding: 3rem;
+    border-radius: 2rem;
+    input {
+    padding: 9px 10px !important;
+}
+input, textarea{
+    resize: none;
+    font-size: $defaultFontSize;
+    &:focus{
+        box-shadow: none;
+        outline: 2px solid $colorPrimary;
+    }
+}
+}

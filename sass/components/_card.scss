@@ -539,3 +539,34 @@
         margin-top: 1.5rem;
     }
 }
+
+.governanceCard {
+    background: $colorWhite;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    display: flex;
+    align-items: flex-start;
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+}
+
+.whyUsCard {
+    background: $colorWhite;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid $colorBorder;
+    transition: $transition;
+    height: 100%;
+
+    &:hover {
+        box-shadow: $boxShadow;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
